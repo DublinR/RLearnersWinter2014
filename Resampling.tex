@@ -1,0 +1,14 @@
+Resampling is any of a variety of methods for doing one of the following:
+
+\begin{itemize}
+\item Estimating the precision of sample statistics (medians, variances, percentiles) by using subsets of available data (jackknifing) or drawing randomly with replacement from a set of data points (bootstrapping)
+\item Exchanging labels on data points when performing significance tests (permutation tests, also called exact tests, randomization tests, or re-randomization tests)
+\item Validating models by using random subsets (bootstrapping, cross validation)
+\end{itemize}
+
+Common resampling techniques include bootstrapping, jackknifing and permutation tests.
+
+
+%--------------------------------------------------------------------%
+\subsection{Permutation Tests (Exact Tests)}
+A permutation test (also called a randomization test, re-randomization test, or an exact test) is a type of statistical significance test in which the distribution of the test statistic under the null hypothesis is obtained by calculating all possible values of the test statistic under rearrangements of the labels on the observed data points. In other words, the method by which treatments are allocated to subjects in an experimental design is mirrored in the analysis of that design. If the labels are exchangeable under the null hypothesis, then the resulting tests yield exact significance levels; see also exchangeability. Confidence intervals can then be derived from the tests. The theory has evolved from the works of R.A. Fisher and E.J.G. Pitman in the 1930s.
