@@ -33,3 +33,16 @@ table(idahoData$TYPE,idahoData$VAL)
 # How many households have 2 bedrooms and 7 total rooms?
 
 table(idahoData$RMS,idahoData$BDS,dnn=list("RMS","BDS"))
+
+##############################################################################################
+
+# How many households have 3 bedrooms and 4 total rooms?
+nrow(idahoData[!is.na(idahoData$BDS) & idahoData$BDS==3 &
+!is.na(idahoData$BDS) & idahoData$RMS==4,])
+# How many households have 2 bedrooms and 5 total rooms?
+nrow(idahoData[!is.na(idahoData$BDS) & idahoData$BDS==2 &
+!is.na(idahoData$BDS) & idahoData$RMS==5,])
+# How many households have 2 bedrooms and 7 total rooms?
+nrow(idahoData[!is.na(idahoData$BDS) & idahoData$BDS==2 &
+!is.na(idahoData$BDS) & idahoData$RMS==7,])
+6
