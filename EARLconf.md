@@ -21,5 +21,11 @@ vega - Web Package
 
 Cocaine Seizures
 
+<hr>
+
+Tourr package - animated graphics
+
+Linked Brushing
+
 
 <hr>
