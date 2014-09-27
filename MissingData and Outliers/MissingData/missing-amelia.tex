@@ -1,0 +1,28 @@
+\subsection{Amelia} 
+
+\textbf{Amelia II: A Program for Missing Data}
+
+\begin{itemize}
+\item Amelia II "multiply imputes" missing data in a single cross-section (such as a survey), from a time series (like variables collected for each year in a country), or from a time-series-cross-sectional data set (such as collected by years for each of several countries). 
+\item Amelia II implements our bootstrapping-based algorithm that gives essentially the same answers as the standard IP or EMis approaches, is usually considerably faster than existing approaches and can handle many more variables. 
+
+% Unlike Amelia I and other statistically rigorous imputation software, it virtually never crashes (but please let us know % if you find to the contrary!). 
+
+\item The program also generalizes existing approaches by allowing for trends in time series across observations within a cross-sectional unit, as well as priors that allow experts to incorporate beliefs they have about the values of missing cells in their data. 
+\item Amelia II also includes useful diagnostics of the fit of multiple imputation models. The program works from the R command line or via a graphical user interface that does not require users to know R.
+\end{itemize}
+
+%--------------------------------------------------------------------------------------%
+\subsection{Missing Imputation}
+\begin{itemize}
+\item Multiple imputation involves imputing m values for each missing cell in your data matrix and creating m "completed" data sets. (Across these completed data sets, the observed values are the same, but the missing values are filled in with different imputations that reflect our uncertainty about the missing data.) 
+\item After imputation, Amelia will then save the m data sets. You then apply whatever statistical method you would have used if there had been no missing values to each of the m data sets, and use a simple procedure to combine the results. 
+\item Under normal circumstances, you only need to impute once and can then analyze the m imputed data sets as many times and for as many purposes as you wish. 
+\item The advantage of Amelia is that it combines the comparative speed and ease-of-use of our algorithm with the power of multiple imputation, to let you focus on your substantive research questions rather than spending time developing complex application-specific models for nonresponse in each new data set. 
+\item Unless the rate of missingness is exceptionally high, m=5 (the program default) will usually be adequate. 
+\item Other methods of dealing with missing data, such as listwise deletion, mean substitution, or single imputation, are in common circumstances biased, inefficient, or both. 
+\item When multiple imputation works properly, it fills in data in such a way as to not change any relationships in the data but which enables the inclusion of all the observed data in the partially missing rows.
+
+\item Amelia II is a new program, and follows in the spirit with the same purpose as the first version of Amelia by James Honaker, Anne Joseph, Gary King, Kenneth Scheve, and Naunihal Singh
+\end{itemize}
+\end{document}

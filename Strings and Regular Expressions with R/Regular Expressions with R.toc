@@ -1,0 +1,11 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Regex Flavours}{1}
+\contentsline {section}{\numberline {3}Metacharacters}{2}
+\contentsline {section}{\numberline {4}Search Patterns}{2}
+\contentsline {section}{\numberline {5}The \texttt {grep} function }{2}
+\contentsline {section}{\numberline {6}The \texttt {grepl} function }{2}
+\contentsline {section}{\numberline {7}The \texttt {regexpr} and \texttt {gregexpr} function }{3}
+\contentsline {section}{\numberline {8}Replacing Regex Matches in String Vectors (sub and gsub)}{4}
+\contentsline {section}{\numberline {9}\texttt {strsplit}}{4}
+\contentsline {section}{\numberline {10}Back references}{4}
