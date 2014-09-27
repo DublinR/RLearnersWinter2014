@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Dimensionality Reduction}{3}
+\contentsline {section}{\numberline {2}Stepwise Regression (using \texttt {R}}{4}
+\contentsline {subsection}{\numberline {2.1}Backward Elimination}{4}
+\contentsline {subsection}{\numberline {2.2}Stepwise Regression}{7}
+\contentsline {subsection}{\numberline {2.3}Scree plot}{10}
+\contentsline {section}{\numberline {3}Sampling adequacy (KMO Statistic)}{11}
+\contentsline {subsection}{\numberline {3.1}Bartlett's Test for Sphericity}{11}
+\contentsline {section}{\numberline {4}FactoMineR}{13}
+\contentsline {section}{\numberline {5}Principal Component Analysis }{14}
+\contentsline {subsection}{\numberline {5.1}Introduction}{14}
+\contentsline {section}{\numberline {6}Mathematical background of PCA}{16}
+\contentsline {subsection}{\numberline {6.1}Number of Extracted Components}{17}
+\contentsline {subsection}{\numberline {6.2}Characteristics of Principal Components}{18}
+\contentsline {subsection}{\numberline {6.3}Total Variance in the context of PCA}{19}
+\contentsline {section}{\numberline {7}Orthogonal versus Oblique Solutions}{20}
+\contentsline {section}{\numberline {8}Determining the Number of Meaningful Components to Retain}{21}
+\contentsline {subsection}{\numberline {8.1}The Eigenvalue-One Criterion}{21}
+\contentsline {subsection}{\numberline {8.2}Advantages and Disadvantages}{23}
+\contentsline {section}{\numberline {9}The Scree test}{24}
+\contentsline {subsubsection}{\numberline {9.0.1}Advantages and Disadvantages}{26}
+\contentsline {subsection}{\numberline {9.1}Proportion of Variance Accounted For}{26}
+\contentsline {subsubsection}{\numberline {9.1.1}Advantages and Disadvantages}{27}
+\contentsline {subsection}{\numberline {9.2}The Interpretability Criteria}{27}
+\contentsline {section}{\numberline {10}Review of Important Definitions}{29}

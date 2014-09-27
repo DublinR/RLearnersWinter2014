@@ -1,3 +1,0 @@
-\contentsline {section}{\numberline {1}Stepwise Regression (using \texttt {R}}{2}
-\contentsline {subsection}{\numberline {1.1}Backward Elimination}{2}
-\contentsline {subsection}{\numberline {1.2}Stepwise Regression}{4}

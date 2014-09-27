@@ -83,22 +83,3 @@ Creating a scree plot in R
 
 
 
-Scree plot
- 
-A scree plot displays the proportion of the total variation in a dataset that is explained by each of the components in a principle component analysis. It helps you to identify how many of the components are needed to summarise the data.
- 
-To create a scree plot of the components, use the screeplot function.
- > screeplot(modelname) 
-where modelname is the name of a previously saved principle component analysis, created with the princomp function as explained in the article Performing a principle component analysis in R.
- 
-Example: Scree plot for the iris dataset
- 
-In a the article Performing a principal component analysis with R we performed a principle component analysis for the iris dataset, and saved it to an object named irispca.
- 
-To create a scree plot of the components, use the command:
- > screeplot(irispca) 
-The result is shown below.
- 
-
-
-From the scree plot we can see that the amount of variation explained drops dramatically after the first component. This suggests that just one component may be sufficient to summarise the data.
