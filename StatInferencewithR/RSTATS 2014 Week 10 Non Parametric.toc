@@ -1,6 +1,0 @@
-\contentsline {section}{\numberline {1}Non-Parametric Inference Procedures}{2}
-\contentsline {subsection}{\numberline {1.1}Non-Parametric Procedures}{2}
-\contentsline {subsection}{\numberline {1.2}Kolmogorov-Smirnov Test}{2}
-\contentsline {subsection}{\numberline {1.3}Wilcoxon Mann-Whitney Test}{3}
-\contentsline {subsection}{\numberline {1.4}Example}{3}
-\contentsline {subsubsection}{\numberline {1.4.1}Boxplot to accompany Wilcoxon Test Analysis}{4}
