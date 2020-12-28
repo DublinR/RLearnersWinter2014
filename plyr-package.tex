@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section{\texttt{plyr}: }
+
+\texttt{plyr} is a set of tools for a common set of problems: you need to split up a big data structure into homogeneous pieces, apply a function to each piece and then combine all the results back together. For example, you might want to:
+
+\begin{itemize}
+\item fit the same model to subsets of a data frame
+\item quickly calculate summary statistics for each group
+\item perform group-wise transformations like scaling or standardising
+\end{itemize}
+It’s already possible to do this with base \texttt{R} functions (like split and the apply family of functions), but \texttt{plyr} makes it all a bit easier with:
+
+\begin{itemize}
+\item totally consistent names, arguments and outputs
+\item convenient parallelisation through the foreach package
+\item input from and output to data.frames, matrices and lists
+\item progress bars to keep track of long running operations
+\item built-in error recovery, and informative error messages
+\item labels that are maintained across all transformations
+\end{itemize}
+
+\end{document}

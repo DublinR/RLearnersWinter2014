@@ -1,0 +1,153 @@
+
+
+#### Question 1: 
+Rewrite 512.54589087 to 3 significant figures
+```{r}
+signif(512.54589087, digits=3)
+```
+
+#### Question 2: 
+using the dataset CAR_EMISSION.CSV, How many diesel cars in tax band E have both fuel consumption more than 6.4 litres per 100km and CO emissions less than 0.15 g per km?
+```{r}
+car = read.csv(file='CAR_EMISSION.CSV')
+carE = subset(car, Tax =='E')
+
+Q2 = subset(carE, Consumption > 6.4 & CO < 0.15 & Fuel=='Diesel')
+summary(Q2)
+```
+#### Question 3: 
+
+You are asked to use a linear model (e.g. using R's lm() function) to analyse whether the tax band (tax bands C, D or E) of a petrol car affects a car's CO emissions.
+
+- Create a subset that contains data for only petrol cars
+- transform the variable Consumption (in units of litres per 100 km) using a power transformation with an exponent of 1.7
+- Fit a linear model with a response variable that is the power transformed fuel consumption and an explanatory variable that is a single fixed factor which distinguishes between tax bands From this analysis the estimated difference in the response variable between tax bands C and E is 9.3 (e.g. using the ``summary()`` function) . 
+- What is the standard error for this estimate? You should give your answer to 2 significant figures.
+
+```{r}
+pet_car = subset(car, Fuel=='Petrol')
+pet_car$trans_con = (pet_car$Consumption)^1.7
+
+m1 = lm(trans_con ~ Tax, data = pet_car)
+summary(m1)
+signif(0.1547, digits=2)
+```
+
+#### Question 4: 
+
+*To answer this question you should use the dataset CAR_EMISSION.CSV, available on Blackboard. You can assume that this dataset is free from errors.*
+
+- You are asked to use a linear model (e.g. using R's `lm()` function) to analyse whether the tax band (tax bands C, D or E) of a petrol car affects a car's CO emissions.
+- Create a subset that contains data for only petrol cars
+- transform the variable CO (CO emissions in units of g per km) using a power transformation with an exponent of 0.7
+- Fit a linear model with a response variable that is the power transformed CO emissions and an explanatory variable that is a single fixed factor which distinguishes between tax bands
+- The residual sum of squares from this analysis is 13 (e.g. using R's `anova()` function). What is the estimate for the F-ratio?
+
+```{r}
+pet_car = subset(car, Fuel=='Petrol')
+pet_car$trans_CO = (pet_car$CO)^0.7
+
+m2 = lm(trans_CO ~ Tax, data = pet_car)
+anova(m2)
+signif(5.5152, digits=2)
+```
+#### Question 5: 
+You are asked to use a linear model (e.g. using R's `lm()` function) to analyse whether the tax band (tax bands C, D or E) of a diesel car affects a car's CO emissions.
+
+- Create a subset that contains data for only diesel cars
+- transform the variable CO (CO emissions in units of g per km) using a power transformation with an exponent of 0.4
+- Fit a linear model with a response variable that is the power transformed CO emissions and an explanatory variable that is a single fixed factor which distinguishes between tax bands
+
+Which of the following statements best describes the outcome of the ANOVA analysis and is suitable for inclusion in a scientific report?
+
+```{r}
+die_car = subset(car, Fuel=='Diesel')
+die_car$trans_CO = (die_car$CO)^0.4
+
+m3 = lm(trans_CO ~ Tax, data = die_car)
+anova(m3)33
+```
+answer: For diesel cars, the average CO emissions vary between tax bands 
+(F2, 680=13.9, p<0.0005).
+
+#### Question 6: 
+
+To answer this question you should use the dataset FAT.CSV, available on Blackboard. You can assume that this dataset is free from errors.
+What is the slope of the best-fit regression line with percent body fat (variable 'fat') as the dependent (y-axis) variable and 'abdomen.cm' as the independent (x-axis) variable?
+
+```{r}
+fat = read.csv(file='FAT.CSV')
+f_m = lm(fat ~ abdomen.cm, data=fat)
+summary(f_m)
+signif(0.66928, digits=2)
+```
+#### Question 7: 
+
+What is the standard error on the intercept of the best-fit regression line with percent body fat (variable 'fat') as the dependent (y-axis) variable and 'chest.cm' as the independent (x-axis) variable?
+```{r}
+f_m2 = lm(fat ~ chest.cm, data=fat)
+summary(f_m2)
+signif(4.65420, digits=2)
+```
+#### Question 8: 
+A persons body mass index (BMI) is calculated by dividing their weight #(measured in kg) by the square of their height (measured in metres). It has been proposed that BMI increases with age, and you are asked to test this by 
+analysing the data.
+
+Calculate the BMI for each person in the data set (the mean BMI across all people in the data set is 25 kg m-2 to 2 sig. fig.).
+Then power transform your BMI variable using an exponent of -1 (i.e. BMI-1 which in R is calculated by ***BMI^-1`***). The transformed BMI will have a mean of 0.04 m2 kg-1).
+
+Finally fit a linear model with the transformed BMI as the response variable and age.yr as the continuous explanatory variable.
+Make sure that your linear model fits an intercept. From the results of your model, which of the following statements is correct and suitable for a scientific report?
+
+```{r}
+fat$BMI = (fat$weight.kg)/(fat$height.m)^2
+mean(fat$BMI)
+
+fat$trans_BMI = (fat$BMI)^-1
+mean(fat$trans_BMI)
+
+f_m3 = lm(trans_BMI~age.yr, data=fat)
+summary(f_m3)
+anova(f_m3)
+```
+
+ **Answer: **
+ 
+ We find evidence of a relationship between a persons BMI and their age (F1,248=4.2, p=0.042). 
+ 
+ The relationship between BMI (kg m-2) and age (years) is estimated to be BMI-1 = 0.043 - 0.000052 age.
+
+
+#### Question 9: 
+*To answer this question you should use the dataset SURGERY2.CSV, available on Blackboard. You can assume that this dataset is free from errors.*
+
+You are asked to analyse whether the rate of eyelid surgeries (number per year) has been been changing between years.
+- Using a subset of the data corresponding to Gender=female and surgery Type=Eyelid, perform a goodness of fit chi-squared test on the number of eyelid surgeries performed per year from 2008 to 2012.
+- If the rate of eyelid surgeries were constant, what would be the expected number of eyelid surgeries per year?
+
+```{r}
+surgery = read.csv(file="SURGERY2.CSV")
+surg_sub = subset(surgery, Gender=="female" & Type=="Eyelid")
+
+x1 = array(c(4520,4827,5127,5373,6071)) # these nums are the counts for each year
+s_m1 = chisq.test(x1, p=c(0.2,0.2,0.2,0.2,0.2))
+
+s_m1
+s_m1$expected
+```
+
+#### Question 10: 
+
+You are asked to analyse whether the rate of brow surgeries (quantified as number per year) has been changing between years.
+- Using a subset of the data corresponding to ***Gender=female*** and surgery ***Type=Brow***, perform a goodness of fit chi-squared test on the number of brow surgeries performed per year from 2008 to 2012.
+- Which of the following sentences would be the most appropriate description of this goodness of fit test for a scientific report?
+
+```{r}
+surg_sub2 = subset(surgery, Gender=='female' & Type=='Brow')
+table(surg_sub2$Count)
+
+x2 = array(c(932,1324,1390,1418,1663)) # these nums are the counts for each year
+s_m2 = chisq.test(x2,p=c(0.2,0.2,0.2,0.2,0.2) )
+
+s_m2
+```

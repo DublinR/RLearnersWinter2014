@@ -1,0 +1,420 @@
+
+# devtools: install_github()
+# sf:  simple features (map files)
+v
+install.packages("devtools")
+install.packages("sf")
+
+library(devtools)
+library(sf)
+
+
+install.package("tidyverse/
+
+
+
+# HM   YES
+# XT   Yes
+# RP   Yes
+# CB   Yes
+# MC   Yes
+# KOR
+# MC   Yes
+# DOL  Yes
+# SW   YES
+# SJ   
+# SJ
+
+## Goals:
+## WIFI
+# Central Hotel is WIFI
+# do the followi
+# library(dplyr)
+# install.packages("dplyr")
+# Other uses packages :
+#  - tidyr
+#  - magrittr
+#  - broom
+#  - modelr
+# First install the package
+# load it up using "library" commands
+# Remark: Tidyverse
+# Website: www.tidyverse.org
+# main maintainer : Hadley Wickham
+# RStudio : Integrated Development Environment
+# inbuilt R datasets
+# directly accessible for training purposes
+# iris
+# mtcars
+# for packages (ggplot2), there are more
+# diamonds (53450 cases)
+# useful commands for inspecting data sets
+# nrow(iris)
+# ncol(iris)
+# class(iris)
+# mode(iris)
+# dim(iris)
+# rownames(iris) and rownames(mtcars)
+# determing what is contained in your data set
+# head(iris)
+# tail(iris)
+# names(iris)
+# colnames(iris)
+# remark : dataframe
+# also   : tibble (tibble.tidyverse.org)
+# see tibbles later on
+# key difference is structure
+# same functionality as data frames
+# WIFI: central hotel guest
+# dataframe is comprised of columns
+# to look at a particular column
+# dfnames$colname
+# mtcars$vs
+ mtcars$vs
+mtcars$am
+# Digression: pivot tables
+# frequency table
+table(mtcars$vs)
+# 0 and 1 is the category name
+# 18 and 14 is the frequency
+# Cross tabulations
+ tables(mtcars$vs,mtcar$am)
+ table(mtcars$vs,mtcars$am)
+#### what I am about to do is "bad"
+#
+# Russian Dolls
+prop.table(table(mtcars$vs,mtcars$am)
+)
+addmargins(prop.table(table(mtcars$vs,mtcars$am)))
+round(addmargins(prop.table(table(mtcars$vs,mtcars$am))),2)
+# othee commands
+# - xtable : writing tables to latex
+# LaTex : Typesetting
+# writeLines : export text to file
+# Different approach
+# magrittr
+# %>% pipe operator
+library(magrittr)
+# Bad Pun
+ install.packages("magrittr")
+# install.packages("magrittr")
+# install.packages("forcats")
+# For categorical variables
+# Bad Pun
+mtcars$vs %>% table(mtcars$am) 
+mtcars$vs %>% table(mtcars$am) %>% prop.table()
+mtcars$vs %>% table(mtcars$am) %>% prop.table() %>% addmargins()
+mtcars$vs %>% table(mtcars$am) %>% prop.table() %>% addmargins() %>% round(3)
+round(pi,3)
+# style.tidyverse.org
+# opininated collection of R packages
+# intended for after-the-fact legigibility
+# Stefn Bache
+###################
+# back to basics
+# creating an object
+ A <- 5
+# A is assigned the value 5
+# <- used be a key on computers
+B = 4
+# works fine
+class(A)
+names <- "Kevin"
+names
+class(names)
+names <- c("Kevin","Oscar","LouLou","Sean")
+names
+# vector
+dim(names)
+# not a dataframe
+length(names)
+#### stringr
+# digression
+# gsub, grep, paste, sprintf
+## come back to help files in a moment
+mtcars$am
+mtcars$am %>% class()
+# numeric?
+# really : binary variable
+# categorical
+# convert it to a factor
+# factor : categorical variable
+# ctype in python
+#
+mtcars$am <- factor(mtcars$am)
+mtcars$am %>% class()
+mtcars$am
+summary(mtcars$am)
+summary(mtcars$vs)
+# Logical Variables / Boolean
+X <- c(TRUE,FALSE,TRUE,FALSE)
+X
+class(X)
+mtcars$mpg > 15
+# disgression
+mean(mtcars$mpg >15)
+sum(mtcars$mpg >15)
+# summary statistics:  Proportions
+##### help files
+# help(sprintf)
+# ?Intervals 
+# ?intervals
+# John Mount (WinVector LLC)
+# Nina Zumel 
+# WVPlots
+apropos("vals")
+apropos("val")
+apropos("chi")
+airquality %>% head(5)
+iris %>% head() %>% summary()
+summary(head(iris))
+iris %>% head() %>% summary()
+ # <-  assignment
+lm(mpg ~ wt, data="mtcars")
+lm(mpg ~ wt, data=mtcars)
+lm(mpg ~ wt, data <- mtcars)
+# useful for scripts : assign()
+#useful for scripts
+# airquality
+airquality %>% head(5)
+airquality %>% summary()
+# NA is a missing value
+# dealing with missing values
+mean(airquality$Ozone)
+mean(airquality$Ozone,na.rm=TRUE)
+#sd : std deviations
+#var : variance
+# median :
+# range: 
+# library(psych)
+# describe(iris)
+sd(mtcars$mpg)
+
+##############################
+
+
+history(200)
+# dplyr
+# tidyr
+install.packages("dplyr")
+library(dplyr)
+# install.packages("tidyverse")
+# Error message is interesting!!
+# library(dplyr)
+library(tidyr)
+library(MASS)   # statistical modelling
+iris %>% select(1:4)
+iris %>% dplyr::select(1:4)
+iris %>% dplyr::select(1:4) %>% head(5)
+# environmental 
+# Jenny Bryan : interoperatability
+# Twitter
+# Two things she doesnt like 
+# 1. 
+# rm(list=ls())
+# 2. setwd()
+getwd()
+setwd("github")
+getwd()
+setwd("~/")
+getwd()
+# library(here)
+# automates the working directory specification
+# list.files()
+# ls() 
+ls()
+rm(A)
+rm(B)
+ls()
+# rm : remove
+# 
+# history(30)
+# sessionInfo()
+# Stack Overflow
+# source()
+# used for scripts
+source("song.R")
+# RStudio
+# Section Up Scripts 
+# Part 1 : Load Library ####
+# makes the section collapsable
+# Rstudio : projects
+# cat
+cat(" print statement ")
+print(" print statement")
+library(dplyr)
+# grammar of data manipulation
+# Hadley Wickham and Romain Francois
+cat(B)
+# Verbs
+# single tables
+# auxillary verbs
+# two verbs
+# tidyr verbs
+# select
+# filter
+# dataframes
+# select: picks columns
+# filter
+# filter: picks rowns
+iris %>% select(1:4)
+iris %>% dplyr::select(1:4)
+iris %>% dplyr::select(1:4) %>% head(5)
+# selects first 4 columns
+# selects all columns up to a specified column
+mtcars %>% dplyr::select(1:4) %>% head(5)
+# now considered bad to have rownames
+# principles of tidy data (HW)
+mtcars %>% dplyr::select(1:drat) %>% head(5)
+mtcars %>% dplyr::select(cyl:drat) %>% head(5)
+names(mtcars)
+mtcars %>% dplyr::select(drat) %>% head(5)
+mtcars %>% dplyr::select(:drat) %>% head(5)
+mtcars %>% dplyr::select(cyl:drat) %>% head(5)
+mtcars %>% dplyr::select(cyl:drat,everything()) %>% head(5)
+#reorder columns
+#some data sets have 2500 variables
+# create derived variables
+mtcars %>% dplyr::select(contains("qs")) %>% head(5)
+mtcars %>% dplyr::select(  contains("qs")  ) %>% head(5)
+mtcars %>% dplyr::select(  contains("e")  ) %>% head(5)
+mtcars %>% dplyr::select(  starts_with("q")  ) %>% head(5)
+mtcars %>% dplyr::select(  ends_with("c")  ) %>% head(5)
+mtcars %>% dplyr::select(  ends_with("ec")  ) %>% head(5)
+### more selection criterion
+# one_of( )
+# numrange()
+dplyr.tidyverse.org
+# dplyr.tidyverse.org
+# CRAN
+# Vignette
+# vignette : mini tutorial
+###################
+# Filter
+mtcars %>% filter(am == 1) %>% head(3)
+mtcars %>% filter(am == 1, vs == 1) %>% head(3)
+# ((am == 1)|( vs == 1))
+# "|" : Logical OR
+# "&" : Logical AND
+# Some cases you should use "&&" and "||"
+#
+mtcars %>% filter(mpg < 25) %>% head(3)
+# relationsal operators
+# <
+# >
+# <=
+# >=
+# ==
+# !=
+#### Set Theory
+cyllist <- 6:9 
+cyllist
+7 %in% cyllist
+5 %in% cyllist
+# %in% : set membership
+mtcars %>% filter( cyl %in% cyllist ) %>% head(3)
+mtcars %>% filter( !(cyl %in% cyllist) ) %>% head(3)
+# single table verbs
+# select : columns
+# filter : rows
+# omit columns
+iris %>% select(-1)
+iris %>% dplyr::select(-1)
+iris %>% dplyr::select(-1) %>% head()
+deletelist = c("temp1","qsec1","sec2","am")
+mtcars %>% select(! one_of(deletelist))
+mtcars %>% select(!(one_of(deletelist)))
+mtcars %>% select(!(one_of(deletelist))
+mtcars %>% dplyr::select(!(one_of(deletelist)))
+mtcars %>% dplyr::select(!(one_of(am))) %>% head()
+mtcars %>% dplyr::select(!(one_of("am"))) %>% head()
+mtcars %>% dplyr::select(!(contain("am"))) %>% head()
+mtcars %>% dplyr::select(!(contains("am"))) %>% head()
+mtcars %>% dplyr::select(!(contains("am"))) %>% head()
+# arrange()
+mtcars %>% arrange(cyl) %>% head(10)
+mtcars %>% arrange(am,vs) %>% head(10)
+mtcars %>% arrange(mpg) %>% head(10)
+mtcars %>% arrange(desc(mpg)) %>% head(10)
+iris %>% sample_frac(10)
+iris %>% sample_n(10)
+iris %>% sample_frac(0.10)
+# auxillary verbs
+# view(iris)
+glimpse(iris)
+glimpse(mtcars)
+# group_by : grouping 
+# summarize 
+mtcars %>% group_by(vs,am) %>% summarize( mean(mpg) )
+mtcars %>% group_by(vs,am) %>% summarize( meanMPG = mean(mpg) )
+mtcars %>% group_by(vs,am) %>% 
+      summarize( 
+          meanMPG = mean(mpg),
+          medMPG = median(mpg),
+          sdMPG = sd(MPG) )
+          medMPG = median(mpg),
+mtcars %>% group_by(vs,am) %>% 
+      summarize( 
+          meanMPG = mean(mpg),
+          medMPG = median(mpg),
+          sdMPG = sd(mpg) )
+mtcars %>% group_by(vs,am) %>% 
+      summarize( 
+          meanMPG = mean(mpg),
+          medMPG = median(mpg),
+          sdMPG = sd(mpg),
+          prop20 = mean(mpg>20) )
+# write.csv()
+report1 <- mtcars %>% group_by(vs,am) %>% 
+      summarize( 
+          meanMPG = mean(mpg),
+          medMPG = median(mpg),
+          sdMPG = sd(mpg),
+          prop20 = mean(mpg>20) )
+report1
+write.csv(report1,"carreport.csv",rownames=FALSE)
+write.csv(report1,"carreport.csv",row.names=FALSE)
+# list.files()
+#mutate
+history(200)
+
+
+
+ 
+
+################################
+
+# Wireless Server
+# Seagate
+# ZIP files
+
+# dublinr2018
+
+################################
+
+# Working with the R environment
+
+
+report1 <- mtcars %>% group_by(vs,am) %>% 
+      summarize( 
+          meanMPG = mean(mpg),
+          medMPG = median(mpg),
+          sdMPG = sd(mpg),
+          prop20 = mean(mpg>20) )
+
+##################################
+
+
+two tables verbs
+intervals
+cut
+
+
+
+####################################
+
+mtcars %>% mutate( sqrt_mpg = sqrt(mpg) , 
+                   log_disp = log(disp) , 
+                   ratio_var = log_disp/sqrt_mpg,
+                   over20  = between(mpg,20,25)
+                  ) %>% head(5)

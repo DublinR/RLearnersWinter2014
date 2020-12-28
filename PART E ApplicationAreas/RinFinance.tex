@@ -1,0 +1,178 @@
+Section 1
+data creation and editing
+read.csv
+finance.yahoo.com : drawing down a set of data and analysing it
+Section 2
+Using Packages and Taskviews
+quantmod package : candleplots 
+Financial Charts in quantmod:
+chartSeries
+barChart
+candleChart
+lineChart
+actuar package : distributions
+ttr package : technical trading rules. Functions and data to construct technical trading rules with R.
+ttrTests package : Five core functions evaluate the efficacy of a technical trading rule. - Conditional return statistics - Bootstrap resampling statistics - Reality Check for data snooping bias among parameter choices - Robustness, or Persistence, of parameter choices - Parameter Domain Correlation Test
+PerformanceAnalytics packages
+tickers
+Section 3 Applied Econometrics with R
+Correlograms
+Time series data / econometric data
+
+%=====================================================================%
+R for Finance
+
+
+Actuarial packages
+
+Risk Adjusted Performance Measures
+
+Expected Shortfall
+
+
+
+•
+Time Series Analysis
+
+•
+Econometrics
+
+•
+Actuarial functions
+
+
+
+ 
+
+Actuarial packages
+
+Chain ladder
+
+actuar package (Vincent Goulet)
+
+
+portfolio analysis
+
+Quantitate Risk Management (qrmlib)
+
+
+
+
+
+
+
+
+
+install.packages(“PerformanceAnalytics”)
+
+library(PerformanceAnalytics)
+
+
+data(managers)
+
+SterlingRatio(managers[,1:4])
+
+CalmarRatio(managers[,1:4])
+ 
+
+
+
+
+
+
+Risk Adjusted Performance Measures
+
+
+The Calmar Ratio is used to determine return relative to drawdown (downside) risk in a hedge fund.
+
+
+The Sterling Ratio is a ratio used mainly in the context of hedge funds. This risk-reward measure determines which hedge funds have the highest returns while enduring the least amount of volatility.
+
+
+
+
+
+
+
+
+
+> CalmarRatio(managers$HAM4)
+
+                  HAM4
+
+Calmar Ratio 0.4227315
+
+>
+
+> SterlingRatio(managers$HAM2)
+
+                                  HAM2
+
+Sterling Ratio (Excess = 10%) 1.248598
+ 
+
+
+
+
+
+Expected Shortfall
+
+
+Expected shortfall (ES) is a risk measure, a concept used in finance (and more specifically in the field of financial risk measurement) to evaluate the market risk or credit risk of a portfolio. 
+
+
+It is also called conditional VaR.
+
+
+It is an alternative to value at riskthat is more sensitive to the shape of the loss distribution in the tail of the distribution. 
+
+•
+historical
+
+•
+modified
+
+•
+gaussian
+
+
+
+
+
+
+
+
+
+
+> ES(edhec[,1:3], p=.95, method="historical")
+
+   
+
+    Convertible Arbitrage  CTA Global       Distressed Securities
+
+ES  -0.09954768            -0.04284185      -0.06087217
+
+> 
+
+>
+
+> ES(edhec[,1:3], p=.95, method="gaussian")
+
+
+     Convertible Arbitrage  CTA Global      Distressed Securities
+
+ES   -0.0348072             -0.04517756     -0.02976848
+
+>
+
+>
+
+> ES(edhec[,1:3], p=.95, method="modified")
+
+
+     Convertible Arbitrage  CTA Global      Distressed Securities
+
+ES   -0.09954768            -0.04284185     -0.06087217
+ 
+
+

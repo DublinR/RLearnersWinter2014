@@ -1,0 +1,314 @@
+\documentclass{beamer}
+
+% The scale function
+% The dist Function
+% coef and resid
+% Confindence Intervals for regression Coefficients
+% Standardized Regression coefficients
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\begin{frame}
+\Huge
+\[\mbox{Computing with \texttt{R}}\]
+\[\mbox{The \texttt{scale()} function}\]
+\bigskip
+\LARGE
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{scale()} function}
+\Large
+\vspace{-1cm}
+\textbf{Data:} \\
+The \texttt{X} and \texttt{Y} variables are the $wt$ and $mpg$ variables from the \textit{\textbf{\textit{mtcars}}} data set.
+
+\begin{framed}
+\begin{verbatim}
+X <- mtcars$wt
+Y <- mtcars$mpg
+\end{verbatim}
+\end{framed}
+
+\end{frame}
+%--------------------------------------%
+% Set 1 : The Scale Function
+%--------------------------------------%
+\begin{frame}
+\frametitle{Computing with \texttt{R} : The \texttt{scale()} function}
+\Large
+\vspace{-1cm}
+\begin{itemize}
+\item The scale function is used to determine standardized values for each element in a data set.
+\vspace{0.2cm}
+\item This is a data transformation technique that can be used in regression and clustering analysis.
+\end{itemize}
+\end{frame}
+%--------------------------------------%
+% Set 1 : The Scale Function
+%--------------------------------------%
+\begin{frame}
+\frametitle{Computing with \texttt{R} : The \texttt{scale()} function}
+\Large
+\begin{itemize}
+\item A standardized value for an element is simply the number of standard deviations away from the mean.
+\item Suppose $z_i$ is the standardized value for $x_i$, an element of a sample data set with mean $\bar{x}$ and standard deviaton $s$.
+\[z_i = \frac{x_i-\bar{x}}{s}\]
+\end{itemize}
+\end{frame}
+
+%--------------------------------------%
+\begin{frame}[fragile]
+\Large
+\begin{verbatim}
+.....
+[32,] -0.446876870
+attr(,"scaled:center")
+[1] 3.21725
+attr(,"scaled:scale")
+[1] 0.9784574
+> mean(X)
+[1] 3.21725
+> sd(X)
+[1] 0.9784574
+\end{verbatim}
+\end{frame}
+%--------------------------------------%
+% Set 2 : The dist Function
+%--------------------------------------%
+\begin{frame}
+\Huge
+\[\mbox{Computing with \texttt{R}}\]
+\[\mbox{The \texttt{dist()} function}\]
+\bigskip
+\LARGE
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{dist()} function}
+\Large
+\vspace{-1cm}
+\textbf{Data:} \\
+The first 8 rows and first 5 columns from the \textbf{mtcars} dataset.
+
+\begin{framed}
+\begin{verbatim}
+X <- mtcars[1:8,1:5]
+\end{verbatim}
+\end{framed}
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{dist()} function}
+\Large
+\vspace{-1cm}
+
+\begin{itemize}
+\item The \texttt{dist()} function is used to compute the \textbf{distance matrix}.
+\item The distance matrix is comprised of distance measures for each pair of cases in the data set.
+\item A distance measure is a measure of \emph{\bf{similarity}} between two cases, based on a set of numeric values.
+\end{itemize}
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{dist()} function}
+\Large
+\vspace{-1cm}
+
+\begin{itemize}
+\item The default distance measure is the \textbf{Euclidean Distance}.
+\item Given three numeric variables $X$, $Y$ and $Z$, the Euclidean distance between case 1 and case 2 is computed as
+\[ED_{12} =  \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}\]
+\end{itemize}
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{dist()} function}
+\Large
+\vspace{-1cm}
+ Other types of distance measure that can be specified are
+\begin{itemize}
+
+\item the ``maximum" measure,\item the ``Manhattan" measure,\item the ``Canberra" measure,\item the ``binary" measure \item the ``Minkowski" measure.
+
+\end{itemize}
+\end{frame}
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Computing with \texttt{R} : The \texttt{dist()} function}
+\Large
+\textbf{Transforming the Data}
+\begin{itemize}
+\item Sometimes it would beneficial to transform one or more of the variables to prevent them being unduly influential, at the expense of other variables.
+\item One approach is to use standardized values. Standardization can be performed using the \texttt{scale()} function.
+\item Another approach is logarithmic transformation, which can be performed using the \texttt{log()} function.
+\end{itemize}
+
+
+\end{frame}
+
+
+%--------------------------------------%
+% Set 3 : Useful Functions for Linear Regression
+%--------------------------------------%
+\begin{frame}
+\huge
+\[\mbox{Computing with \texttt{R}}\]
+\[\mbox{Useful Regression Functions}\]
+\bigskip
+\LARGE
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Useful Functions for Linear Regression}
+\Large
+\vspace{-1cm}
+\textbf{Data:} \\
+The \texttt{X} and \texttt{Y} variables are the $wt$ and $mpg$ variables from the \textit{\textbf{\textit{mtcars}}} data set.
+
+\begin{framed}
+\begin{verbatim}
+X <- mtcars$wt
+Y <- mtcars$mpg
+
+Fit <- lm(Y~X)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+\begin{frame}
+\frametitle{Useful Functions for Linear Regression}
+\Large
+\begin{itemize}
+\item \texttt{summary()} - very detailed statistical summary of the fitted model,
+\item \texttt{coef()} - prints out the regression coefficients for the fitted model,
+\item \texttt{fitted(}) - prints out the fitted values for the fitted model,
+\item \texttt{resid()} - prints out the residual for the fitted model,
+\item \texttt{anova()} - prints out the ANOVA table for the fitted model.
+\end{itemize}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+
+
+%--------------------------------------%
+% Set 4 : Useful Functions for Linear Regression
+%--------------------------------------%
+\begin{frame}
+\Huge
+\[\mbox{Computing with \texttt{R}}\]
+\huge
+\[\mbox{Confidence Intervals}\]
+\[\mbox{for Regression Coefficients}\]
+\bigskip
+\LARGE
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Confidence Intervals for Regression Coefficients}
+\Large
+\vspace{-1cm}
+\textbf{Data:} \\
+The \texttt{X1}, \texttt{X2} and \texttt{Y} variables are the $wt$ , $hp$ and $mpg$ variables from the \textit{\textbf{\textit{mtcars}}} data set.
+
+\begin{framed}
+\begin{verbatim}
+X1 <- mtcars$wt
+X2 <- mtcars$hp
+Y <- mtcars$mpg
+
+Fit <- lm(Y~X1+X2)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+\begin{frame}
+\frametitle{Confidence Intervals for Regression Coefficients}
+\Large
+\vspace{-1cm}
+\begin{itemize}
+\item To compute the confidence intervals, we use the \texttt{confint()} function, specifying the name of the fitted model. \vspace{0.2cm}
+\item The default confidence level is 95\%. We can adjust it by changing the \texttt{level=} argument. (e.g. \texttt{level = 0.90}).
+\item We can specify the confidence interval for particular regression coefficients using the \texttt{parm=} argument.
+\end{itemize}
+\end{frame}
+%--------------------------------------%
+% Set 4 : Useful Functions for Linear Regression
+%--------------------------------------%
+\begin{frame}
+\Huge
+\[\mbox{Computing with \texttt{R}}\]
+\LARGE
+\[\mbox{Standardized Regression Coefficients}\]
+\bigskip
+\LARGE
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Standardized Regression Coefficients}
+\Large
+\vspace{-1cm}
+\textbf{Data:} \\
+The \texttt{X} and \texttt{Y} variables are the $wt$ and $mpg$ variables from the \textit{\textbf{\textit{mtcars}}} data set.
+
+\begin{framed}
+\begin{verbatim}
+X1 <- mtcars$wt
+X2 <- mtcars$hp
+Y <- mtcars$mpg
+
+Fit.u <- lm(Y ~ X1 + X2)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+
+\begin{frame}[fragile]
+\frametitle{Standardized Regression Coefficients}
+\Large
+\vspace{-1cm}
+
+\begin{itemize}
+\item In some statistical analyses, it is useful to work with standardized values, rather than observed values.
+\item A standardized value for an element is simply the number of standard deviations away from the mean.
+\end{itemize}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+
+\begin{frame}[fragile]
+\frametitle{Standardized Regression Coefficients}
+\Large
+\vspace{-1cm}
+
+\begin{itemize}
+\item To compute a regression model on standardized values, use the \texttt{scale()} function to standardize all of the relevant variables.
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
+Fit.s <- lm( scale(Y) ~ scale(X1) +
+  scale(X2) )
+\end{verbatim}
+\end{framed}
+\end{frame}
+%-------------------------------------%
+%-------------------------------------%
+
+\end{document}

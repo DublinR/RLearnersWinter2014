@@ -1,0 +1,49 @@
+class of a data object
+NPI : Kruskal Test
+AIC
+
+Check the following data set for
+
+1 Correlation test
+[1Mark] compute the Pearson Correlation coefficirnt. Interpret this value.
+[1 Mark] Describe the conclusion of thr hypothesis test.
+clearly state the hypthesis being tested.
+
+2 Shapiro Wilk Test
+Test the following data set to determine wheter the data are normally distributed.
+
+3 probability plot
+sketch the plot and explain your conclusion.
+.
+4 matrices
+compute the determinant of the following matrix.
+ determine the inverse of the matrix
+multipky matrix G by Matrix H [stochastic proceeses]
+
+
+
+5
+<using the help function >
+Give A brief description of the folliwing R commands.
+
+aic
+svd 
+chol 
+
+6
+<Simple linear regression>
+determine the regression model equation for the followingr scenario the dependent variable explained by independent variable x.
+.
+comment on the p values of the hypothesis tests for both coefficients.
+
+7 t test var.test
+
+test the two samples to determine the equality of means. And the equality of variances.
+
+ 8
+The poisson distribution
+
+At the maths learning centre, studenrs arrive at a rate of 5 per hour on average.
+ avera
+What is the probabilury of three or less. 
+What is the probability of exactly four arrival in one hour.

@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section*{\texttt{qcc}: Quality Control Charts}
+\textit{(yhat article by Drew Conway)}\\
+\textbf{qcc} is a library for statistical quality control. Back in the 1950s, the now defunct Western Electric Company was looking for a better way to detect problems with telephone and eletrical lines. They came up with a set of rules to help them identify problematic lines. \\
+
+\noindent The rules look at the historical mean of a series of datapoints and based on the standard deviation, the rules help judge whether a new set of points is experiencing a mean shift.\\
+
+\noindent The classic example is monitoring a machine that produces lug nuts. Let's say the machine is supposed to produce 2.5 inch long lug nuts. We measure a series of lug nuts: 2.48, 2.47, 2.51, 2.52, 2.54, 2.42, 2.52, 2.58, 2.51. Is the machine broken? Well it's hard to tell, but the Western Electric Rules can help.
+\begin{framed}
+\begin{verbatim}
+library(qcc)
+ 
+# series of value w/ mean of 10 
+# with a little random noise added in
+x <- rep(10, 100) + rnorm(100)
+
+# a test series w/ a mean of 11
+new.x <- rep(11, 15) + rnorm(15)
+
+# qcc will flag the new points
+qcc(x, newdata=new.x, type="xbar.one")
+
+\end{verbatim}
+\end{framed}
+While you might not be monitoring telephone lines, qcc can help you monitor transaction volumes, visitors or logins on your website, database operations, and lots of other processes.
+
+%----------------------------------------------------- %
+\newpage
+\begin{itemize}
+\item Shewhart quality control charts for continuous, attribute and count data. 
+\item Cusum and EWMA charts. 
+\item Operating characteristic curves. 
+\item Process capability analysis. 
+\item Pareto chart and cause-and-effect chart. 
+\item Multivariate control charts.
+\end{itemize}
+\end{document}

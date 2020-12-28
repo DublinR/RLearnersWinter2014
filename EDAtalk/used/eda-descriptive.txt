@@ -1,0 +1,32 @@
+## Trimmed Mean
+
+A truncated mean or trimmed mean is a statistical measure of central tendency, much like the mean and median. It involves the calculation of the mean after discarding given parts of a probability distribution or sample at the high and low end, and typically discarding an equal amount of both.
+
+This is usually given as a percentage, but may be given as a fixed number of points.
+ 
+
+
+## Trimmed Mean : Examples
+
+The scoring method used in many sports that are evaluated by a panel of judges is a truncated mean: discard the lowest and the highest scores; calculate the mean value of the remaining scores.[5]
+ 
+The Libor benchmark interest rate is calculated as a trimmed mean: given 18 response, the top 4 and bottom 4 are discarded, and the remaining 10 are averaged (yielding trim factor of 4/18 ˜ 22%).[6]
+
+ 
+
+## Winsorization
+
+Winsorizing or Winsorization is the transformation of statistics by limiting extreme values in the statistical data to reduce the effect of possibly spurious outliers. It is named after the engineer-turned-biostatistician Charles P. Winsor (1895–1951). The effect is the same as clipping in signal processing.
+ 
+The distribution of many statistics can be heavily influenced by outliers. A typical strategy is to set all outliers to a specified percentile of the data; for example, a 90% Winsorization would see all data below the 5th percentile set to the 5th percentile, and data above the 95th percentile set to the 95th percentile. Winsorized estimators are usually more robust to outliers than their more standard forms, although there are alternatives, such as trimming, that will achieve a similar effect.
+
+
+## Trimean
+
+In statistics the trimean (TM), or Tukey's trimean, is a measure of a probability distribution's location defined as a weighted average of the distribution's median and its two quartiles:
+ 
+This is equivalent to the average of the median and the midhinge:
+
+ 
+
+## The Describe Package

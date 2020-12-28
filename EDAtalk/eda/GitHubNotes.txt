@@ -1,0 +1,212 @@
+% Force of Interest - Financial Maths
+% Data Science Notes in Public Folder
+% FERM
+
+
+\subsection*{Wilxcon Signed Rank Test}
+
+This is a non-parametrix alternative to the paired student t-test for the case of two 
+related samples or repeated measurements
+
+The test requires that the data is measured at the interval level of measurement.
+
+However it does not require assumptions about the form of the distributions about that measurement.
+%-------------------------------------------------%
+\subsection*{Mann Whitney U test}
+
+Non parametric test to see if two samples came from the same distribution.
+The null hypothesis is that both samples are from the same distribution, and therefore their probability distributions are equal
+
+%=========================================================================%
+Part A Finance Theory
+%--------------------------%
+
+Risk and Risk Aversion
+Portfolio Mathematics
+Capital Allocation
+CAPM and Multi-Factor Models
+Basics of Capital Structure
+Term Structure of Interest Rates
+Valuing Forward Contracts
+Basic Principles of Option Pricing
+
+Part B Financial Instruments
+%--------------------------%
+Bonds
+Analysis of Bonds
+Futures and Forwards
+Swaps
+Vanilla Options
+Credit Derivatives
+Caps, Floors and Swaptions
+
+Part C Markets
+%-------------------------%
+Structure of Financial Markets
+Money Markets
+Bond MArkets
+Foreign Exchange Markets
+Stock Markets
+Futures Markets
+Structure of Commodity MArkets
+Energy Markets
+%================================================================%
+
+On December6 1994, Orange County declared Bankruptcy after suffering losses of around \$1.6 Billion.
+
+Losses Results ina wrong-way bet on interest rates in one of its main investment pools
+
+largest financial failure ofo US local government
+
+Treasurer : Robert Citron
+Controlled 7.5 billion in assets
+
+Riskily Invested in Interest Linked Securities
+
+Strategy dependes on Short term interest rates staying relatively low compared to medium term interest rates
+
+in Feb 1994, the federal reserve began to raise rates, causing manny securities in Orange County's portfolio to fall in value.
+
+Citron ignored the losses at first, but demands for billions of dollars of collateral from Wall Street Counterparties, and 
+a threat of a run of deposits from local government investors grew into a liquidity trap from which he ould not escape.
+
+\subsection*{Orange County - Aftermath}
+
+
+Citron was fined \$100000 and given 1 years house arrest (lenient, but he did not operate for personal gain), on the basis 
+of 6 felony counts.
+
+The county issued recovery bonds and with local taxes buoyant, came out of bankruptcy after 18 months.
+
+Moodys awarded the country with a credit rating key for borrowing
+
+Merrill Lynch made and out-of-contract settlement.
+%================================================================%
+SII CERT IM Maths and Statistics
+
+\begin{itemize}
+\item[1] Statistics
+\item[2] Mathematics
+\end{itemize}
+
+Data Sources, Presentations, Tabulations and Graphical Data
+
+\subsection*{Measures of Centrality and Dispersion}
+\begin{itemize}
+\item Mean, Mode and Median
+\item Skew
+\item Geometric MEan
+\item IQR
+\item Dispersion
+\item Normal Distribution
+\item Expected Risk and Return
+\end{itemize}
+
+
+
+%-----------------------------------------%
+\subsection*{Bivariate Data}
+
+\begin{itemize}
+\item $\rho$
+\item $cov$
+\end{itemize}
+
+\[  \rho_{ab} = \frac{cov(a,b)}{\sqrt{var(a) \times var(b)}}  \]
+
+Applications in Finance : The lower the correlation, the greater the diversification.
+
+CERTIM 2.2 Financial Maths
+
+Time Value of Money
+
+\begin{itemize}
+\item Simple Interest
+\item Compound Interest
+\item Annualized Compound Returns
+\item Flat Rates vs Effective Rates (APR)
+\item Amortization
+\end{itemize}
+
+\[ FV_n = P\left[ \left[  \frac{(1+r)^{n+1}-1}{r} \right] -1 \right] \]
+
+%-----------------------------------------------------%
+
+%2.2.4 Discounting
+ Reverting to PV
+ Given $FV = PV(1+r)^n$
+\[
+PV = \frac{FV}{(1+r)^n} = FV(1+r)^{-n} 
+\]
+Annuity Discount Factor
+%-----------------------------------------------------%
+
+\[ \mbox{Real Return} = \left[\frac{(1+ \mbox{Nominal Rate})^n}{(1+ \mbox{Inflation Rate})^n} -1 \right] \]
+
+Revert to Annualised Value
+
+Investment Project Appraisals
+
+Net Present Value Calculations
+
+%==========================================================================%
+
+\section*{Single Period Model}
+
+\begin{itemize}
+\item So
+\item Su
+\item Sd
+\item Pay-Off Ku
+\item Pay-Off Kd
+\end{itemize}
+
+We assume risk free interest rate $r_f$
+
+(bonds: $1+r_f$
+\subsection*{Construction of Portfolio}
+
+\begin{itemize}
+\item[Good] $A(Su) + B(1+r_f)$
+\item[Bad] $A(Sd) + B(1+r_f)$
+\end{itemize}
+
+We find that 
+\[A = \frac{K_H-K_L}{S_H-K_L}\]
+
+\[B = \left[    \frac{S_LK_H - S_HK_L}{(1+r_f)(S_L-S_h)}   \]
+%==========================================================================%
+
+% UoLEP Corporate Finance
+% Section 9
+\section*{Mergers and Takeovers}
+
+\begin{itemize}
+\item Merger Motivation
+\item A numerical takeover example
+\item The impossibility of an efficient takeover
+\item Two ways to get efficient takeovers
+\item Empirical Evidence
+\end{itemize}
+%==========================================================================%
+
+% UoLEP Corporate Finance
+% 2004 Zone B Question 1a
+
+\subsection*{Asset Allocation in Portfolio}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\\hline
+              &                  & \\ \hline
+Portfolio $X$ & $E(r_X) = 8\%$  & $\sigma_X = 5\%$ \\ \hline
+Portfolio $Y$ & $E(r_Y) = 11\%$  & $\sigma_Y = 8\%$  \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection*{Expected Return of Portfolio}
+\[E(r_p)\] = \alpha E(r_X) +(1-\alpha) E(r_Y)\]
+
+\[E(r_p)\] = 1/4 E(r_X) + 3/4 E(r_Y) = 1/4\times 8\% + 3/4 \times 11\%\]
+\[ E(r_p) = 10.25\% \]
+
+\[ \sigma^2_p = (1/4)^2(0.05)^2 + (3/4)^2(0.08)^2 \]
